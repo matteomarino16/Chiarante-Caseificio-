@@ -186,6 +186,14 @@ body {
     position: relative; 
     box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.486); 
     margin: 0 auto;
+}
+
+/* Sposta il telefono più a destra su desktop */
+@media (min-width: 769px) {
+    .card {
+        margin: 0 0 0 auto;
+        transform: translateX(50px);
+    }
 } 
 
 .card-int { 
@@ -1398,13 +1406,15 @@ section h2::after {
     }
     
     .hero .container {
-        gap: 20px;
-        padding: 0 20px;
-        justify-content: space-around;
+        gap: 30px;
+        padding: 80px 20px 20px 20px;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
     }
     
     .logo-image {
-        width: 150px;
+        width: 220px;
         animation: none; /* Disabilita logoFloat su mobile */
     }
     
@@ -1418,6 +1428,8 @@ section h2::after {
         height: 350px;
         border-radius: 31.25px;
         padding: 6.25px;
+        margin: 0 auto;
+        transform: none;
     }
     
     .phone-video {

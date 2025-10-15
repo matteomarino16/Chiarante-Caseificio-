@@ -214,15 +214,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Product descriptions
     const productDescriptions = {
-        'burrata': 'La burrata è un formaggio fresco a pasta filata, caratterizzato da una crosta esterna di mozzarella che racchiude un cuore cremoso di stracciatella e panna. Dal sapore delicato e dalla consistenza unica, è perfetta da gustare fresca con pomodori e basilico.',
-        'burro': 'Il nostro burro artigianale è prodotto con panna fresca di alta qualità, lavorata secondo metodi tradizionali. Dal colore dorato e dal sapore intenso, è ideale per la preparazione di dolci e per esaltare il gusto di pane e focacce.',
-        'caciocavallo': 'Il caciocavallo è un formaggio a pasta filata dalla forma caratteristica, stagionato per almeno 30 giorni. Dal sapore deciso e leggermente piccante, è perfetto da gustare a fette o grattugiato su pasta e risotti.',
-        'cacioricotta': 'Il cacioricotta è un formaggio tipico pugliese dalla pasta compatta e dal sapore delicato. Ottenuto dalla lavorazione di latte vaccino e ovino, è ideale per preparazioni sia dolci che salate.',
         'mozzarella': 'La nostra mozzarella è prodotta quotidianamente con latte fresco locale. Dalla pasta filata morbida e dal sapore dolce, è perfetta da gustare fresca o utilizzata nelle preparazioni culinarie tradizionali.',
+        'fiordilatte': 'Il fiordilatte è una mozzarella di latte vaccino dalla pasta bianca e compatta. Dal sapore delicato e fresco, è ideale per pizza, insalate e preparazioni che richiedono un formaggio dal gusto neutro e dalla consistenza perfetta.',
+        'treccia': 'La treccia è una mozzarella dalla caratteristica forma intrecciata. Prodotta con latte fresco del giorno, mantiene tutta la morbidezza e il sapore autentico della tradizione casearia pugliese.',
+        'scamorza': 'La scamorza è un formaggio a pasta filata dalla forma caratteristica a pera. Dal sapore dolce e delicato, può essere gustata fresca o utilizzata per gratinare, donando cremosità e sapore ai piatti.',
+        'scamorzaaffumicata': 'La scamorza affumicata presenta la stessa consistenza della scamorza classica ma con un aroma intenso dato dal processo di affumicatura naturale. Perfetta per antipasti, pizza e piatti che richiedono un tocco affumicato.',
+        'caciocavallostagionato': 'Il caciocavallo stagionato è un formaggio a pasta filata invecchiato per almeno 6 mesi. Dal sapore intenso e piccante, è perfetto da gustare a fette, grattugiato su pasta o abbinato a miele e noci.',
+        'caciocavallodolce': 'Il caciocavallo dolce è la versione giovane del caciocavallo, stagionato per 30-60 giorni. Dal sapore delicato e leggermente dolce, è ideale per chi preferisce gusti più morbidi e versatili.',
+        'caciocavalloaffumicato': 'Il caciocavallo affumicato unisce il sapore caratteristico del caciocavallo con l\'aroma intenso dell\'affumicatura naturale. Perfetto per antipasti rustici e abbinamenti con salumi e verdure grigliate.',
+        'burrata': 'La burrata è un formaggio fresco a pasta filata, caratterizzato da una crosta esterna di mozzarella che racchiude un cuore cremoso di stracciatella e panna. Dal sapore delicato e dalla consistenza unica, è perfetta da gustare fresca con pomodori e basilico.',
+        'stracciatella': 'La stracciatella è il cuore cremoso della burrata, composta da filamenti di mozzarella e panna fresca. Dal sapore delicato e dalla consistenza cremosa, è perfetta per condire pasta, bruschette o gustare con verdure fresche.',
+        'giuncata': 'La giuncata è un formaggio fresco tradizionale pugliese dalla consistenza morbida e cremosa. Prodotta con latte appena munto, ha un sapore dolce e delicato, ideale da gustare con miele o marmellate.',
         'ricotta': 'La ricotta fresca è ottenuta dalla lavorazione del siero di latte. Dal sapore delicato e dalla consistenza cremosa, è ideale per farcire pasta fresca, preparare dolci tradizionali o gustare semplicemente con un filo di miele.',
-        'scamorzine': 'Le scamorzine sono piccoli formaggi a pasta filata dalla forma tondeggiante. Dal sapore dolce e delicato, sono perfette da gustare fresche o leggermente affumicate, ideali per antipasti e aperitivi.',
+        'ricottaforte': 'La ricotta forte è una specialità pugliese dal sapore intenso e piccante, ottenuta dalla fermentazione della ricotta fresca. Perfetta per condire pasta, spalmare su pane tostato o utilizzare come base per salse saporite.',
         'stracchino': 'Lo stracchino è un formaggio fresco dalla pasta cremosa e spalmabile. Dal sapore dolce e delicato, è perfetto da spalmare su pane tostato o utilizzare per farcire focacce e crescentine.',
-        'treccia': 'La treccia è una mozzarella dalla caratteristica forma intrecciata. Prodotta con latte fresco del giorno, mantiene tutta la morbidezza e il sapore autentico della tradizione casearia pugliese.'
+        'cacioricottafresco': 'Il cacioricotta fresco è un formaggio tipico pugliese dalla pasta morbida e dal sapore delicato. Ottenuto dalla lavorazione di latte vaccino e ovino, è ideale per preparazioni fresche e insalate.',
+        'cacioricottaduro': 'Il cacioricotta duro è la versione stagionata del cacioricotta, dalla pasta compatta e dal sapore più intenso. Perfetto da grattugiare su pasta e risotti o gustare a fette con un filo d\'olio extravergine.',
+        'canestrato': 'Il canestrato è un formaggio stagionato dalla caratteristica forma data dai canestri di vimini. Dal sapore deciso e leggermente piccante, è perfetto da gustare con pane pugliese e un bicchiere di vino rosso.',
+        'formaggioduroconfermenti': 'Il formaggio duro con fermenti è un prodotto stagionato dalla pasta compatta e dal sapore intenso. Arricchito con fermenti selezionati, sviluppa note complesse e persistenti, ideale per gli amanti dei sapori decisi.',
+        'scamorzine': 'Le scamorzine sono piccoli formaggi a pasta filata dalla forma tondeggiante. Dal sapore dolce e delicato, sono perfette da gustare fresche o leggermente affumicate, ideali per antipasti e aperitivi.',
+        'burro': 'Il nostro burro artigianale è prodotto con panna fresca di alta qualità, lavorata secondo metodi tradizionali. Dal colore dorato e dal sapore intenso, è ideale per la preparazione di dolci e per esaltare il gusto di pane e focacce.'
     };
 
     // Add click event to each product card
