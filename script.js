@@ -349,4 +349,31 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyProducts.forEach(product => {
         productObserver.observe(product);
     });
+
+    // Lazy loading per video
+    const lazyVideos = document.querySelectorAll('.lazy-video');
+    
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const video = entry.target;
+                const videoSrc = video.dataset.src;
+                const source = video.querySelector('source');
+                
+                if (videoSrc && source) {
+                    source.src = source.dataset.src;
+                    video.load();
+                    video.play().catch(e => console.log('Video autoplay prevented:', e));
+                    observer.unobserve(video);
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+    });
+
+    lazyVideos.forEach(video => {
+        videoObserver.observe(video);
+    });
 });
