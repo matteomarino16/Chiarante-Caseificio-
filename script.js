@@ -45,6 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Throttle function per ottimizzare le performance
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        }
+    }
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
         if (hamburger && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
@@ -58,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close mobile menu when scrolling
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', throttle(function() {
         if (hamburger) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
@@ -67,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileHamburger.classList.remove('active');
             mobileNav.classList.remove('active');
         }
-    });
+    }, 100));
 
     // Smooth scrolling for navigation links (original)
     navLinks.forEach(link => {
