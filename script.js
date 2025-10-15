@@ -276,4 +276,77 @@ document.addEventListener('DOMContentLoaded', function() {
             closeProductModal();
         }
     });
+
+    // Advanced Lazy Loading with Intersection Observer
+    const lazyImages = document.querySelectorAll('.lazy-image');
+    const lazyProducts = document.querySelectorAll('.lazy-product');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const src = img.getAttribute('data-src');
+                
+                if (src) {
+                    // Create a new image to preload
+                    const newImg = new Image();
+                    newImg.onload = function() {
+                        // Add fade-in effect
+                        img.style.opacity = '0';
+                        img.style.transition = 'opacity 0.3s ease';
+                        img.src = src;
+                        img.removeAttribute('data-src');
+                        img.classList.remove('lazy-image');
+                        img.classList.add('loaded');
+                        
+                        // Fade in the image
+                        setTimeout(() => {
+                            img.style.opacity = '1';
+                        }, 50);
+                    };
+                    newImg.src = src;
+                    
+                    // Stop observing this image
+                    observer.unobserve(img);
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px 0px', // Start loading 50px before the image enters viewport
+        threshold: 0.1
+    });
+
+    // Lazy loading for product background images
+    const productObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const productDiv = entry.target;
+                const bgImage = productDiv.dataset.bg;
+                
+                if (bgImage) {
+                    // Preload the image
+                    const img = new Image();
+                    img.onload = function() {
+                        productDiv.style.backgroundImage = `url('${bgImage}')`;
+                        productDiv.classList.add('loaded');
+                    };
+                    img.src = bgImage;
+                    
+                    observer.unobserve(productDiv);
+                }
+            }
+        });
+    }, {
+        rootMargin: '100px 0px',
+        threshold: 0.1
+    });
+
+    // Start observing all lazy images and products
+    lazyImages.forEach(img => {
+        imageObserver.observe(img);
+    });
+    
+    lazyProducts.forEach(product => {
+        productObserver.observe(product);
+    });
 });

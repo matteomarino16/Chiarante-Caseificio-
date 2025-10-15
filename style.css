@@ -383,20 +383,10 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    animation: heroParallax 30s ease-in-out infinite;
-    will-change: transform, background-position;
+    /* Rimossa animazione pesante heroParallax per migliori performance */
 }
 
-@keyframes heroParallax {
-    0%, 100% {
-        background-position: center top;
-        transform: scale(1);
-    }
-    50% {
-        background-position: center 5%;
-        transform: scale(1.005);
-    }
-}
+/* Rimossi @keyframes heroParallax e shineOverlay per migliori performance */
 
 .hero::before {
     content: '';
@@ -410,19 +400,9 @@ body {
         transparent 25%, 
         transparent 75%, 
         rgba(107, 142, 35, 0.1) 100%);
-    animation: shineOverlay 25s ease-in-out infinite;
+    /* Rimossa animazione pesante shineOverlay per migliori performance */
+    opacity: 0.4;
     pointer-events: none;
-}
-
-@keyframes shineOverlay {
-    0%, 100% {
-        opacity: 0.3;
-        transform: translateX(-100%);
-    }
-    50% {
-        opacity: 0.6;
-        transform: translateX(100%);
-    }
 }
 
 .hero .container {
@@ -455,18 +435,10 @@ body {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
-    animation: logoFloat 8s ease-in-out infinite;
-    will-change: transform;
+    /* Rimossa animazione logoFloat per migliori performance */
 }
 
-@keyframes logoFloat {
-    0%, 100% {
-        transform: translateY(0px) rotateY(0deg);
-    }
-    50% {
-        transform: translateY(-5px) rotateY(2deg);
-    }
-}
+/* Rimosso @keyframes logoFloat per migliori performance */
 
 .logo-image:hover {
     transform: scale(1.1) rotateY(15deg) rotateX(5deg);
@@ -685,20 +657,10 @@ section h2::after {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
-    animation: sectionLogoGlow 8s ease-in-out infinite;
+    /* Rimossa animazione sectionLogoGlow per migliori performance */
 }
 
-@keyframes sectionLogoGlow {
-    0%, 100% {
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-        transform: scale(1);
-    }
-    50% {
-        filter: drop-shadow(0 8px 20px rgba(107, 142, 35, 0.3))
-               drop-shadow(0 0 40px rgba(107, 142, 35, 0.2));
-        transform: scale(1.02);
-    }
-}
+/* Rimosso @keyframes sectionLogoGlow per migliori performance */
 
 .section-logo:hover {
     transform: scale(1.1) rotateY(10deg) rotateX(5deg);
@@ -926,6 +888,43 @@ section h2::after {
     gap: 12px;
     margin-top: 50px;
     grid-auto-flow: dense;
+}
+
+/* Lazy Loading Styles */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Lazy Loading for Products */
+.lazy-product {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    opacity: 0.7;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.lazy-product::before {
+    content: 'Caricamento...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.lazy-product.loaded {
+    opacity: 1;
+}
+
+.lazy-product.loaded::before {
+    display: none;
 }
 
 .gallery-item {
