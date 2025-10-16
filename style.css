@@ -1,4 +1,4 @@
-/* Reset e stili base */
+/* Reset e stili base - Aggiornato per recensioni */
 * {
     margin: 0;
     padding: 0;
@@ -1927,17 +1927,19 @@ img, video {
 
 /* Sezione Recensioni */
 .recensioni {
-    background: #ffffff;
-    padding: 80px 0;
+    background: #ffffff !important;
+    padding: 80px 0 !important;
     border-top: 1px solid #e0e0e0;
+    display: block !important;
 }
 
 .recensioni h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: 700;
+    text-align: center !important;
+    font-size: 2.5rem !important;
+    color: #2c3e50 !important;
+    margin-bottom: 20px !important;
+    font-weight: 700 !important;
+    display: block !important;
 }
 
 .recensioni-header {
@@ -1979,10 +1981,10 @@ img, video {
 }
 
 .recensioni-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    gap: 30px !important;
+    margin-bottom: 50px !important;
 }
 
 .recensione-card {
