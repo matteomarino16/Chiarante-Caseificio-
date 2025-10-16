@@ -228,11 +228,11 @@ document.addEventListener('DOMContentLoaded', function() {
         'ricotta': 'La ricotta fresca è ottenuta dalla lavorazione del siero di latte. Dal sapore delicato e dalla consistenza cremosa, è ideale per farcire pasta fresca, preparare dolci tradizionali o gustare semplicemente con un filo di miele.',
         'ricottaforte': 'La ricotta forte è una specialità pugliese dal sapore intenso e piccante, ottenuta dalla fermentazione della ricotta fresca. Perfetta per condire pasta, spalmare su pane tostato o utilizzare come base per salse saporite.',
         'stracchino': 'Lo stracchino è un formaggio fresco dalla pasta cremosa e spalmabile. Dal sapore dolce e delicato, è perfetto da spalmare su pane tostato o utilizzare per farcire focacce e crescentine.',
-        'cacioricottafresco': 'Il cacioricotta fresco è un formaggio tipico pugliese dalla pasta morbida e dal sapore delicato. Ottenuto dalla lavorazione di latte vaccino e ovino, è ideale per preparazioni fresche e insalate.',
+        'cacioricottafresco': 'Il cacioricotta fresco è un formaggio tipico pugliese dalla pasta morbida e dal sapore delicato. Ideale per preparazioni fresche e insalate.',
         'cacioricottaduro': 'Il cacioricotta duro è la versione stagionata del cacioricotta, dalla pasta compatta e dal sapore più intenso. Perfetto da grattugiare su pasta e risotti o gustare a fette con un filo d\'olio extravergine.',
         'canestrato': 'Il canestrato è un formaggio stagionato dalla caratteristica forma data dai canestri di vimini. Dal sapore deciso e leggermente piccante, è perfetto da gustare con pane pugliese e un bicchiere di vino rosso.',
         'formaggioduroconfermenti': 'Il formaggio duro con fermenti è un prodotto stagionato dalla pasta compatta e dal sapore intenso. Arricchito con fermenti selezionati, sviluppa note complesse e persistenti, ideale per gli amanti dei sapori decisi.',
-        'scamorzine': 'Le scamorzine sono piccoli formaggi a pasta filata dalla forma tondeggiante. Dal sapore dolce e delicato, sono perfette da gustare fresche o leggermente affumicate, ideali per antipasti e aperitivi.',
+        'scamorzine': 'Le scamorzine sono piccoli formaggi a pasta filata dalla forma tondeggiante. Involte nello speck o nella pancetta dal sapore dolce e delicato,ideali per antipasti e aperitivi.',
         'burro': 'Il nostro burro artigianale è prodotto con panna fresca di alta qualità, lavorata secondo metodi tradizionali. Dal colore dorato e dal sapore intenso, è ideale per la preparazione di dolci e per esaltare il gusto di pane e focacce.'
     };
 

@@ -1415,6 +1415,7 @@ section h2::after {
     .logo-image {
         width: 220px;
         animation: none; /* Disabilita logoFloat su mobile */
+        margin-top: -60px; /* Sposta il logo ancora più in alto su mobile */
     }
     
     .products-button {
@@ -1590,6 +1591,11 @@ section h2::after {
     .contact-item {
         font-size: 0.9rem;
         padding: 8px 0;
+    }
+    
+    /* Sposta il numero di telefono più in basso su mobile */
+    .contact-item[href*="tel:"] {
+        margin-top: 20px;
     }
     
     .contact-item svg {
@@ -1847,7 +1853,7 @@ section h2::after {
     .call-button {
         width: 55px;
         height: 55px;
-        bottom: 15px;
+        bottom: 40px;
         right: 15px;
     }
     
@@ -1867,7 +1873,7 @@ section h2::after {
     .call-button {
         width: 50px;
         height: 50px;
-        bottom: 10px;
+        bottom: 35px;
         right: 10px;
     }
     
@@ -1917,4 +1923,188 @@ img, video {
 /* Riduce il reflow durante lo scroll */
 .navbar {
     contain: layout style paint;
+}
+
+/* Sezione Recensioni */
+.recensioni {
+    background: #ffffff;
+    padding: 80px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.recensioni h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.recensioni-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.google-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.rating-stars .star {
+    color: #ffc107;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.rating-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.recensioni-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.recensioni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.recensione-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.recensione-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.recensione-header {
+    margin-bottom: 15px;
+}
+
+.cliente-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cliente-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.cliente-details h4 {
+    margin: 0 0 5px 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.recensione-stars {
+    display: flex;
+    gap: 1px;
+}
+
+.recensione-stars .star {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.recensione-text {
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.recensioni-cta {
+    text-align: center;
+}
+
+.google-reviews-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #4285f4;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.google-reviews-button:hover {
+    background: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+    color: white;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive per recensioni */
+@media (max-width: 768px) {
+    .recensioni {
+        padding: 60px 0;
+    }
+    
+    .recensioni h2 {
+        font-size: 2rem;
+    }
+    
+    .recensioni-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .recensione-card {
+        padding: 20px;
+    }
+    
+    .google-rating {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .google-reviews-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
 }
